@@ -1,5 +1,7 @@
-import React, { createFactory } from "react";
 import { connect } from "react-redux";
+import { CREATE_TODO_ITEM } from "../store/actions";
+import { CLEAR_TASK_NAME } from "../store/actions";
+import uniqid from "uniqid";
 
 const ButtonCreateToDoItem = ({ createTodoItem, taskName }) => {
   return (
@@ -21,14 +23,14 @@ const mapState = (store) => {
 const mapDispatch = (dispatch) => {
   const createTodoItem = (taskName) => {
     const action = {
-      type: "CREATE_TODO_ITEM",
+      type: CREATE_TODO_ITEM,
       payload: {
         name: taskName,
-        id: Math.random(),
+        id: uniqid(),
       },
     };
     dispatch(action);
-    dispatch({ type: "CLEAR_TASK_NAME" });
+    dispatch({ type: CLEAR_TASK_NAME });
   };
   return {
     createTodoItem,

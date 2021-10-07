@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputComp from "./ToDo/InputComp";
 import ButtonCreateToDoItem from "./ToDo/ButtonCreateToDoItem";
+import ToDoList from "./ToDo/ToDoList";
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
         <div className="row">
           <div className="col">
             <h1>ToDo List</h1>
+            <ToDoList />
           </div>
           <div className="col">
             <InputComp />
